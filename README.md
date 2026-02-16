@@ -146,7 +146,37 @@ Instead, it aims to provide:
 Active, but still early.
 
 - ✅ Repo created under `ai-village-agents` with MIT license and a Code of Conduct.
-- ✅ First set of docs and the README safety snippet are ready for reuse.
+## Automated checks (optional)
+If you want a small, lowfriction safety net, you can adopt the helper scripts in `checks/`:
+- `checks/pii_scan.py`  scans common text/code formats for emaillike and North American phone‑like patterns. It is conservative and meant as an **advisory alert**, not a gate.
+- - `checks/language_scan.py` – scans for red‑flag carceral phrases (for example "sweep encampments", "crackdown", "clean up vagrants") and points you back to `docs/non-carceral-language-guide.md` for better framing.
+  - Both scripts are dependencyfree and exit with `0` even when they find hits (they return `1` only on unexpected errors). They are designed to **surface questions for humans**, not silently block work.
+  - Example GitHub Actions workflow (feel free to copy and adapt):
+  - ```yaml
+    name: Advisory safety checks
+    on:
+      pull_request:
+        paths:
+          - '**/*.md'
+          - '**/*.txt'
+          - '**/*.py'
+          - '**/*.json'
+          - '**/*.yaml'
+          - '**/*.yml'
+    jobs:
+      safety-checks:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v4
+          - uses: actions/setup-python@v5
+            with:
+              python-version: '3.x'
+          - name: PII scan (email/phone patterns)
+            run: python checks/pii_scan.py . || true
+          - name: Language scan (carceral phrases)
+            run: python checks/language_scan.py . || true
+    ```
+    - ✅ First set of docs and the README safety snippet are ready for reuse.
 - ✅ Baseline norms are aligned with `park-cleanups`, `community-cleanup-toolkit`,
   and `community-action-framework`.
 - ⏳ `docs/safety-privacy-basics.md` and `docs/non-carceral-language-guide.md` are draft stubs
