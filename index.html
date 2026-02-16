@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Civic Safety Guardrails</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0e1f2d;
+      --muted: #4d5b6a;
+      --accent: #0b7285;
+      --accent-2: #1c7ed6;
+      --surface: #f7f9fc;
+      --card: #ffffff;
+      --border: #dde3ec;
+      --shadow: 0 12px 30px rgba(12, 39, 67, 0.12);
+      --radius: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Space Grotesk", "Segoe UI", system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: radial-gradient(circle at 10% 20%, rgba(12, 114, 133, 0.06), transparent 35%),
+                  radial-gradient(circle at 90% 10%, rgba(28, 126, 214, 0.08), transparent 32%),
+                  var(--surface);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover,
+    a:focus-visible {
+      color: var(--accent-2);
+      text-decoration: underline;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 12px;
+      background: var(--ink);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 8px;
+      z-index: 1000;
+    }
+
+    .skip-link:focus {
+      left: 12px;
+    }
+
+    header {
+      background: linear-gradient(135deg, rgba(12, 114, 133, 0.9), rgba(28, 126, 214, 0.92));
+      color: #f6fbff;
+      padding: 28px 0 46px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 40%, rgba(255, 255, 255, 0.14), transparent 32%),
+                  radial-gradient(circle at 75% 25%, rgba(255, 255, 255, 0.14), transparent 30%);
+      pointer-events: none;
+    }
+
+    .container {
+      width: min(1100px, 92vw);
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pill {
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      color: #e8f6ff;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    nav[aria-label="Primary"] ul,
+    nav[aria-label="Docs"] ul {
+      list-style: none;
+      display: flex;
+      gap: 14px;
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+
+    nav[aria-label="Primary"] a {
+      color: #e8f6ff;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.08);
+      display: inline-block;
+    }
+
+    nav[aria-label="Primary"] a:hover,
+    nav[aria-label="Primary"] a:focus-visible {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.18);
+      text-decoration: none;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      margin: 6px 0 10px;
+      font-size: clamp(2rem, 3vw + 0.5rem, 2.6rem);
+      letter-spacing: -0.02em;
+      color: #fff;
+    }
+
+    .hero p {
+      margin: 0 0 16px;
+      color: #e2f4ff;
+      font-size: 1rem;
+      max-width: 680px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: #fff;
+      color: var(--ink);
+      font-weight: 700;
+      box-shadow: var(--shadow);
+      transition: transform 150ms ease, box-shadow 150ms ease;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      box-shadow: none;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-1px);
+      text-decoration: none;
+      box-shadow: 0 16px 30px rgba(12, 39, 67, 0.25);
+    }
+
+    .quick-links {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--radius);
+      padding: 12px 14px;
+      color: #eaf7ff;
+      margin-top: 12px;
+    }
+
+    .quick-links strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    .quick-links a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 46px 0 60px;
+    }
+
+    section {
+      margin-bottom: 44px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .section-header h2 {
+      margin: 0 0 8px;
+      font-size: 1.35rem;
+      letter-spacing: -0.01em;
+    }
+
+    .section-header p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 620px;
+      font-size: 0.98rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+      transition: transform 150ms ease, box-shadow 150ms ease;
+    }
+
+    .card:hover,
+    .card:focus-within {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 32px rgba(12, 39, 67, 0.2);
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
+    }
+
+    .card p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    .card a.more {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 700;
+    }
+
+    .list {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .list li {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    footer {
+      padding: 18px 0 34px;
+      border-top: 1px solid var(--border);
+      background: #f0f4fa;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: var(--accent);
+    }
+
+    @media (max-width: 840px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      nav[aria-label="Primary"] ul {
+        gap: 8px;
+      }
+
+      nav[aria-label="Primary"] a {
+        padding: 8px 10px;
+      }
+    }
+  </style>
+</head>
+<body id="top">
+  <a class="skip-link" href="#content">Skip to main content</a>
+  <header>
+    <div class="container">
+      <div class="nav-bar">
+        <div class="brand">
+          Civic Safety Guardrails
+          <span class="pill">Reusable text & norms</span>
+        </div>
+        <nav aria-label="Primary">
+          <ul>
+            <li><a href="#docs">Docs</a></li>
+            <li><a href="#templates">Templates</a></li>
+            <li><a href="#repos">Related repos</a></li>
+            <li><a href="#footer">License</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="hero">
+        <div>
+          <h1>Safety, privacy, and non-carceral guardrails for community projects</h1>
+          <p>
+            Copy-pasteable text blocks, checklists, and guardrails you can drop into READMEs,
+            onboarding docs, and event guides so volunteers stay safe, respectful, and privacy-aware.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="docs/safety-privacy-basics.md">Start with the basics</a>
+            <a class="button secondary" href="templates/readme-safety-snippet.md">Grab the README snippet</a>
+          </div>
+          <div class="quick-links" role="navigation" aria-label="Documentation links">
+            <strong>Direct docs</strong>
+            <nav aria-label="Docs">
+              <ul>
+                <li><a href="docs/safety-privacy-basics.md">Safety &amp; privacy basics</a></li>
+                <li><a href="docs/repo-setup-guardrails.md">Repo setup guardrails</a></li>
+                <li><a href="docs/privacy-redaction-checklist.md">Privacy redaction checklist</a></li>
+                <li><a href="docs/how-to-adopt-these-guardrails.md">Adopt these guardrails</a></li>
+                <li><a href="docs/non-carceral-language-guide.md">Non-carceral language guide</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div>
+          <div class="card" aria-label="Highlights">
+            <h3>Use this repository when you need:</h3>
+            <p>Plain-language defaults for safety, privacy, and non-carceral practices that teams can adopt quickly.</p>
+            <ul class="list">
+              <li>Drop-in README section for new or existing projects.</li>
+              <li>PII redaction checks before publishing docs or photos.</li>
+              <li>Language guidance that keeps “we clean trash, not people” at the center.</li>
+              <li>Links to related playbooks for cleanups and community actions.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="content" class="container">
+    <section id="docs">
+      <div class="section-header">
+        <div>
+          <h2>Documentation</h2>
+          <p>Pick the guide that matches your scenario. Each document is ready to browse on GitHub Pages.</p>
+        </div>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3><a href="docs/safety-privacy-basics.md">Safety &amp; Privacy Basics</a></h3>
+          <p>Baseline expectations for any civic or community repo—covers privacy defaults, non-carceral framing, and hazard avoidance.</p>
+          <a class="more" href="docs/safety-privacy-basics.md">Read the basics →</a>
+        </article>
+        <article class="card">
+          <h3><a href="docs/repo-setup-guardrails.md">Repo Setup Guardrails</a></h3>
+          <p>Launch checklist for new repos: licensing, Code of Conduct, privacy notes, and where data should (and should not) live.</p>
+          <a class="more" href="docs/repo-setup-guardrails.md">Open the checklist →</a>
+        </article>
+        <article class="card">
+          <h3><a href="docs/privacy-redaction-checklist.md">Privacy Redaction Checklist</a></h3>
+          <p>Step-by-step scan for PII in docs, screenshots, and logs so you can publish without exposing private details.</p>
+          <a class="more" href="docs/privacy-redaction-checklist.md">Run the checklist →</a>
+        </article>
+        <article class="card">
+          <h3><a href="docs/how-to-adopt-these-guardrails.md">How to Adopt These Guardrails</a></h3>
+          <p>Practical adoption guide with scenarios for upgrading existing repos and rolling out safer defaults.</p>
+          <a class="more" href="docs/how-to-adopt-these-guardrails.md">Follow the guide →</a>
+        </article>
+        <article class="card">
+          <h3><a href="docs/non-carceral-language-guide.md">Non-carceral Language Guide</a></h3>
+          <p>Examples of language to avoid and better phrases to use so your communications stay people-centered and respectful.</p>
+          <a class="more" href="docs/non-carceral-language-guide.md">See the language guide →</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="templates">
+      <div class="section-header">
+        <div>
+          <h2>Template</h2>
+          <p>Copy the ready-made README snippet to add a Safety, Privacy, and Guardrails section to any project.</p>
+        </div>
+      </div>
+      <div class="card">
+        <h3><a href="templates/readme-safety-snippet.md">README Safety Snippet</a></h3>
+        <p>A concise, copy-pasteable block that sets expectations around privacy, non-carceral framing, and hazardous materials.</p>
+        <a class="more" href="templates/readme-safety-snippet.md">Open the snippet →</a>
+      </div>
+    </section>
+
+    <section id="repos">
+      <div class="section-header">
+        <div>
+          <h2>Related Repositories</h2>
+          <p>These projects pair with the guardrails here. Use them for logistics, playbooks, and broader community action patterns.</p>
+        </div>
+      </div>
+      <ul class="list">
+        <li>
+          <strong><a href="https://github.com/ai-village-agents/park-cleanups">park-cleanups</a></strong><br>
+          Field-tested playbooks and notes from park cleanup efforts that inspired these guardrails.
+        </li>
+        <li>
+          <strong><a href="https://github.com/ai-village-agents/community-cleanup-toolkit">community-cleanup-toolkit</a></strong><br>
+          Logistics and tooling for running safe, repeatable community cleanup events.
+        </li>
+        <li>
+          <strong><a href="https://github.com/ai-village-agents/community-action-framework">community-action-framework</a></strong><br>
+          Broader campaign planning and metrics that complement the safety and privacy norms in this repo.
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div class="container">
+      <div class="section-header">
+        <p>
+          Licensed under the <a href="LICENSE">MIT License</a>. Return to the
+          <a href="https://github.com/ai-village-agents/civic-safety-guardrails">main GitHub repository</a>
+          for issues, updates, and contributions.
+        </p>
+        <a class="button secondary" href="#top">Back to top</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
