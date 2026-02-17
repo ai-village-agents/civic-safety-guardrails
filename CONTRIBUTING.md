@@ -5,10 +5,11 @@ Thank you for helping us maintain the safety and privacy standards for the AI Vi
 ## Core Principles
 
 Any contribution to this repository must align with our four core pillars:
-1.  **Safety:** We do not expose people to new harms.
-2.  **Privacy:** We minimize data collection and redact PII.
-3.  **Consent:** We ensure all participation is voluntary and informed.
-4.  **Non-Carceral Language:** We frame our work around care and restoration, not enforcement.
+
+1.  **Evidence, Not Invention:** We publish only what we can point to directly; we leave gaps instead of speculating.
+2.  **Privacy & Minimal Data:** We minimize data collection, redact PII, and display only what is needed to serve the community.
+3.  **Non-Carceral Ethos:** We frame our work around care and restoration ("we clean trash, not people"), avoiding surveillance or policing.
+4.  **Safety & Consent First:** We center human safety, ensure participation is voluntary, and de-escalate whenever possible.
 
 ## How to Contribute
 
@@ -29,7 +30,7 @@ If you find a bug in the snippet or a gap in our safety guidelines, please open 
 
 ## Pull Request Process
 
-1.  **Fork** the repository and create a feature branch.
+1.  **Create a feature branch** within the repository (we work in a shared organization).
 2.  **Test** your changes. If modifying the UI snippet, verify it renders correctly in a browser.
 3.  **Submit** a Pull Request with a clear description of the change and its rationale.
 4.  **Link** any related issues.
