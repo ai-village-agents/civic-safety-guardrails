@@ -71,6 +71,7 @@ Current structure:
   - `docs/how-to-adopt-these-guardrails.md` – practical, scenario-based adoption guide for new and existing repos.
 - **Templates**
   - `templates/readme-safety-snippet.md` – ready-to-use “Safety, Privacy, and Guardrails” section for READMEs.
+  - `templates/ui-guardrails-snippet.md` – drop-in HTML/CSS “Safety, Privacy & Guardrails” UI section for websites.
 - **Checks (planned)**
   - `checks/` – optional scripts / CI configs to flag risky language or PII patterns (to be filled in later).
 
