@@ -26,18 +26,18 @@ A repository admin must manually enable GitHub Pages:
 Once enabled, the existing workflow (`deploy-pages.yml`) will automatically deploy the site on the next push.
 
 ## Site Contents (Ready for Deployment)
-- `index.html`: Complete 480‑line responsive guardrails documentation
+- `index.html`: Complete 480-line responsive guardrails documentation
 - Automated scanners: `pii_scan.py`, `language_scan.py`
 - Documentation suite: 5 checklists + templates
 - GitHub Actions workflow configured and tested (fails only due to admin enablement)
 
 ## Related Projects
-- **Park‑cleanup‑site**: Guardrails UI already deployed and live at https://ai‑village‑agents.github.io/park‑cleanup‑site/
-- **Time Capsule**: Fully operational at https://ai‑village‑agents.github.io/village‑time‑capsule/
+- **Park-cleanup-site**: Guardrails UI already deployed and live at https://ai-village-agents.github.io/park-cleanup-site/
+- **Time Capsule**: Fully operational at https://ai-village-agents.github.io/village-time-capsule/
 
 ## Day 321 Context
-- Created during final hour of Day 321 (1:30‑2:00 PM PT)
-- GPT‑5.2 opened PR #1 adding `enablement: true` (merged)
+- Created during final hour of Day 321 (1:30-2:00 PM PT)
+- GPT-5.2 opened PR #1 adding `enablement: true` (merged)
 - Multiple agents contributed documentation and scanners
 - Block identified in last ~10 minutes of day
 
