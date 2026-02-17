@@ -153,8 +153,8 @@ Active, but still early.
 - ✅ Repo created under `ai-village-agents` with MIT license and a Code of Conduct.
 ## Automated checks (optional)
 If you want a small, lowfriction safety net, you can adopt the helper scripts in `checks/`:
-- `checks/pii_scan.py`  scans common text/code formats for emaillike and North American phone‑like patterns. It is conservative and meant as an **advisory alert**, not a gate.
-- - `checks/language_scan.py` – scans for red‑flag carceral phrases (for example "sweep encampments", "crackdown", "clean up vagrants") and points you back to `docs/non-carceral-language-guide.md` for better framing.
+- `checks/pii_scan.py`  scans common text/code formats for emaillike and North American phone-like patterns. It is conservative and meant as an **advisory alert**, not a gate.
+- - `checks/language_scan.py` – scans for red-flag carceral phrases (for example "sweep encampments", "crackdown", "clean up vagrants") and points you back to `docs/non-carceral-language-guide.md` for better framing.
   - Both scripts are dependencyfree and exit with `0` even when they find hits (they return `1` only on unexpected errors). They are designed to **surface questions for humans**, not silently block work.
   - Example GitHub Actions workflow (feel free to copy and adapt):
   - ```yaml

@@ -1,12 +1,12 @@
 # UI Guardrails Snippet
 
-A responsive, accessible HTML/CSS snippet for displaying safety, privacy, and non-carceral guardrails on project websites. This is the same four‑pillar framework used in the [park‑cleanup‑site](https://ai‑village‑agents.github.io/park‑cleanup‑site/) and can be dropped directly into any HTML page.
+A responsive, accessible HTML/CSS snippet for displaying safety, privacy, and non-carceral guardrails on project websites. This is the same four-pillar framework used in the [park-cleanup-site](https://ai-village-agents.github.io/park-cleanup-site/) and can be dropped directly into any HTML page.
 
 ## Usage
 
 Copy the **HTML** block into your page’s `<body>` where you want the guardrails section to appear.
 
-Copy the **CSS** block into your page’s `<style>` tag (or your main stylesheet). If your site already defines the CSS custom properties (`--green‑light`, `--green‑mid`, etc.), you may omit the `:root` block and rely on your existing theme.
+Copy the **CSS** block into your page’s `<style>` tag (or your main stylesheet). If your site already defines the CSS custom properties (`--green-light`, `--green-mid`, etc.), you may omit the `:root` block and rely on your existing theme.
 
 ## HTML
 
@@ -99,7 +99,7 @@ Copy the **CSS** block into your page’s `<style>` tag (or your main stylesheet
 
 ## Optional navigation link
 
-If you want a “jump‑to‑guardrails” link in your navigation, you can add:
+If you want a “jump-to-guardrails” link in your navigation, you can add:
 
 ```html
 <a href="#guardrails-title" style="display: inline-block; padding: 0.35rem 0.75rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.85rem; background: #e8eaf6; color: #283593; border: 1px solid #3949ab;">🛡️ Safety & Guardrails</a>
@@ -107,17 +107,17 @@ If you want a “jump‑to‑guardrails” link in your navigation, you can add:
 
 ## Integration notes
 
-- The snippet is self‑contained and uses **CSS Grid** for responsive layout.
-- The `aria‑labelledby` attribute ensures screen‑reader accessibility.
+- The snippet is self-contained and uses **CSS Grid** for responsive layout.
+- The `aria-labelledby` attribute ensures screen-reader accessibility.
 - Colors are defined as CSS custom properties; you can override them to match your site’s theme.
-- The four pillars are **Evidence, Not Invention**, **Privacy & Minimal Data**, **Non‑Carceral Ethos**, and **Safety & Consent First**.
+- The four pillars are **Evidence, Not Invention**, **Privacy & Minimal Data**, **Non-Carceral Ethos**, and **Safety & Consent First**.
 
 ## See also
 
-- [README Safety Snippet](./readme-safety-snippet.md) – a text‑only version for READMEs
+- [README Safety Snippet](./readme-safety-snippet.md) – a text-only version for READMEs
 - [Repo Setup Guardrails](../docs/repo-setup-guardrails.md) – checklist for new repositories
-- [How to Adopt These Guardrails](../docs/how-to-adopt-these-guardrails.md) – step‑by‑step guide
+- [How to Adopt These Guardrails](../docs/how-to-adopt-these-guardrails.md) – step-by-step guide
 
 ---
 
-*Part of the [Civic Safety Guardrails](https://github.com/ai‑village‑agents/civic‑safety‑guardrails) collection.*
+*Part of the [Civic Safety Guardrails](https://github.com/ai-village-agents/civic-safety-guardrails) collection.*
