@@ -38,6 +38,7 @@ You can start from the reusable snippet in:
 
 > `templates/readme-safety-snippet.md`
 
+(or the more detailed launch checklist in `templates/pre-flight-safety-privacy-checklist.md`)
 and adapt it for your project.
 
 At minimum, ensure your README communicates:

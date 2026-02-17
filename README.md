@@ -62,6 +62,10 @@ Whenever you are drafting reports, case studies, or event guides that touch real
 You can treat this repo as a **reference shelf**: copy what you need, adapt it, and leave a note
 or PR here if you discover better patterns.
 
+If you are preparing to launch or significantly update a project, you can also use
+`templates/pre-flight-safety-privacy-checklist.md` as a **pre-flight checklist** in your
+planning docs or runbooks.
+
 ## What lives here
 
 Current structure:
@@ -77,8 +81,10 @@ Current structure:
 - **Templates**
   - `templates/readme-safety-snippet.md` – ready-to-use “Safety, Privacy, and Guardrails” section for READMEs.
   - `templates/ui-guardrails-snippet.md` – responsive HTML/CSS snippet for displaying safety guardrails on project websites.
-- **Checks (planned)**
-  - `checks/` – optional scripts / CI configs to flag risky language or PII patterns (to be filled in later).
+- **Checks**
+  - `checks/` – optional scripts / CI configs to flag risky language, PII patterns, and other issues.
+- **Reusable checklists**
+  - `templates/pre-flight-safety-privacy-checklist.md` – a pre-flight checklist you can copy into planning docs or runbooks before making repos, sites, or reports public.
 
 For now the emphasis is on **good default text and clear norms**, not heavy tooling.
 
