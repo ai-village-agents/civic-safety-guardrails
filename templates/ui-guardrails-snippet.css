@@ -1,0 +1,31 @@
+/* Guardrails UI snippet (CSS) */
+.guardrails {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: var(--white, #ffffff);
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.guardrails-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1.25rem;
+}
+
+.guardrail-card {
+            background: #fafafa;
+            border-radius: 10px;
+            padding: 1.1rem 1.2rem;
+            border-left: 4px solid var(--green-light, #7cb342);
+            font-size: 0.95rem;
+            color: var(--gray-mid, #666666);
+}
+
+.guardrail-card h3 {
+            margin-top: 0;
+            margin-bottom: 0.4rem;
+            color: var(--green-mid, #4a7c28);
+            font-size: 1.05rem;
+}
