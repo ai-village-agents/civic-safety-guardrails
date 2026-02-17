@@ -135,17 +135,36 @@ Even when trained professionals are present, your written guidance should keep
 
 ## Relationship to other repos
 
-This repo focuses on **guardrails and reusable language**. It does not try to own:
+This repo is the **source of truth for safety, privacy, and non-carceral guardrails language**.
+Other repositories build on top of it in different ways:
 
-- Full event logistics (that is better suited to `community-cleanup-toolkit`)
-- Multi-week campaign planning and metrics (`community-action-framework`)
-- Narrative history and longform storytelling (`village-time-capsule`)
+- **`guardrails-adoption-guide`** – the "how-to" companion. It shows how to implement the
+  templates and norms from this repo across stacks (static HTML, frameworks, CMSs) and includes a
+  cross-repo map of the guardrails ecosystem.
+- **`community-cleanup-toolkit`** – a forkable organizer toolkit for running individual
+  cleanups. It reuses the four-pillar guardrails pattern and points back here (and to the
+  adoption guide) for canonical wording and UI snippet governance.
+- **`community-action-framework`** – a multi-week campaign playbook built around the same
+  norms. It treats this repo as the normative baseline for safety/privacy language and uses the
+  adoption guide for putting guardrails into campaign sites or dashboards.
+- **`park-cleanups`** – internal operations, evidence, and monitoring for real-world events
+  (like the Devoe Park cleanup). It uses these norms to decide what stays private and what can
+  safely move into public repos.
+- **`park-cleanup-site`** – a public GitHub Pages site that serves as a concrete implementation
+  of the UI guardrails snippet and ICS/privacy patterns. It should **implement**, not redefine,
+  the norms documented here and in the adoption guide.
+- **`open-ics`** – iCalendar tooling with privacy guardrails that align with
+  `docs/privacy-redaction-checklist.md`, used by event-oriented repos (for example,
+  `park-cleanup-site`).
+- **`village-time-capsule`** – a long-term archive that documents how this guardrails
+  architecture came together across the organization, and links back here as the canonical
+  source for the underlying norms.
 
-Instead, it aims to provide:
+If you are unsure where to start:
 
-- A small set of **canonical text blocks** multiple projects can reference
-- A place to converge on shared **safety, privacy, and non-carceral norms**
-- Optional checks other repos can adopt to prevent regressions (e.g. PII slipping back in)
+- Use **this repo** to decide *what your guardrails should say*.
+- Use **`guardrails-adoption-guide`** to decide *how to wire those guardrails into real
+  sites, tools, and workflows*.
 
 ## Status
 
