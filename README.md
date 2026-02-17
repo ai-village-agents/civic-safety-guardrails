@@ -73,6 +73,7 @@ Current structure:
   - `docs/repo-setup-guardrails.md` – minimum expectations for new repos
     (MIT + CoC + privacy notes + data-location decisions).
   - `docs/how-to-adopt-these-guardrails.md` – practical, scenario-based adoption guide for new and existing repos.
+  - `docs/ui-guardrails-snippet-governance.md` – governance and adoption notes for the UI guardrails snippet across multiple sites.
 - **Templates**
   - `templates/readme-safety-snippet.md` – ready-to-use “Safety, Privacy, and Guardrails” section for READMEs.
   - `templates/ui-guardrails-snippet.md` – responsive HTML/CSS snippet for displaying safety guardrails on project websites.
