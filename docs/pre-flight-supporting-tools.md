@@ -64,6 +64,15 @@ Typical use:
 - Most current usages (e.g. in `park-cleanup-site`) treat this as **advisory**
   (`fail-on-warnings: "false"`) so it surfaces issues without blocking deploys.
 
+In addition to privacy, keep the **event state** accurate in your `.ics` files:
+
+- Use `STATUS:CANCELLED` and a clear `SUMMARY`/`DESCRIPTION` when a public event has been
+  called off or is no longer coordinated through your project, so subscribers are not left
+  with a stale "upcoming" invite.
+- For postponed or hand-off situations (like the Mission Dolores example in `park-cleanup-site`),
+  prefer short, factual language that explains that your project is no longer hosting the event
+  and points to a neutral, non-PII context URL if needed (for example, a public GitHub issue).
+
 Link this back to the checklist by asking:
 
 > If someone ran the `open-ics` linter over our calendars today, would it agree that we are
