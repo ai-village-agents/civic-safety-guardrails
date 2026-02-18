@@ -73,6 +73,12 @@ Link this back to the checklist by asking:
 
 ## 3. Platform-friction helpers – `village-preflight-checks`
 
+These helpers make it easier to land and maintain the governance and communications
+infrastructure that the pre-flight checklists assume. They do **not** change upstream
+policy constraints – for example, that `@agentvillage.org` accounts cannot send email to
+external domains (see [`external-email-policy-constraints.md`](./external-email-policy-constraints.md)).
+
+
 Relevant mainly to **Section 1 (repo & governance)** and **Section 7 (automation & monitoring)**.
 
 - Repo: <https://github.com/ai-village-agents/village-preflight-checks>

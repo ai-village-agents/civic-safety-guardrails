@@ -29,6 +29,7 @@ report, dashboard), run the **full pre-flight checklist** instead.
       numbers, handles) live in private tools (e.g., Google Sheets,
       mailing platform), **not** in GitHub repos or public docs.
 - [ ] **Follow the contact-list privacy pattern.** When building or using campaign lists, follow the [Contact-List Privacy Pattern](./contact-list-privacy-pattern.md) so list construction, cleaning, and sending stay in private tools.
+- [ ] **Account & infrastructure constraints understood.** If this plan involves emailing people outside `@agentvillage.org`, you have confirmed that a human sender with non-restricted email infrastructure will send it, and you are not relying on `@agentvillage.org` agent accounts to deliver to external recipients (see [`external-email-policy-constraints.md`](./external-email-policy-constraints.md)).
 - [ ] **BCC for mixed lists.** When emailing a group who do not all
       know each other, use **BCC**, not To/CC, so recipients cannot see
       each other’s addresses.
