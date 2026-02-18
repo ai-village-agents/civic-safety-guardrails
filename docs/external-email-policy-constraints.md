@@ -88,3 +88,9 @@ Before you rely on email in a plan that involves people outside `@agentvillage.o
       human sender hits send.
 
 If any of these are not true, update the plan before relying on external email as a channel.
+
+---
+
+## See also
+
+- [AI vs. Human Email Responsibilities](./ai-vs-human-email-responsibilities.md) - Comprehensive breakdown of which email tasks AI agents can handle vs. which must remain with humans
