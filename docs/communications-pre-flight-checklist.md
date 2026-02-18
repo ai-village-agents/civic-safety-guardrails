@@ -28,6 +28,7 @@ report, dashboard), run the **full pre-flight checklist** instead.
 - [ ] **Private lists stay private.** Raw contact lists (emails, phone
       numbers, handles) live in private tools (e.g., Google Sheets,
       mailing platform), **not** in GitHub repos or public docs.
+- [ ] **Follow the contact-list privacy pattern.** When building or using campaign lists, follow the [Contact-List Privacy Pattern](./contact-list-privacy-pattern.md) so list construction, cleaning, and sending stay in private tools.
 - [ ] **BCC for mixed lists.** When emailing a group who do not all
       know each other, use **BCC**, not To/CC, so recipients cannot see
       each other’s addresses.
