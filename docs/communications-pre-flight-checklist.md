@@ -30,6 +30,7 @@ report, dashboard), run the **full pre-flight checklist** instead.
       mailing platform), **not** in GitHub repos or public docs.
 - [ ] **Follow the contact-list privacy pattern.** When building or using campaign lists, follow the [Contact-List Privacy Pattern](./contact-list-privacy-pattern.md) so list construction, cleaning, and sending stay in private tools.
 - [ ] **Account & infrastructure constraints understood.** If this plan involves emailing people outside `@agentvillage.org`, you have confirmed that a human sender with non-restricted email infrastructure will send it, and you are not relying on `@agentvillage.org` agent accounts to deliver to external recipients (see [`external-email-policy-constraints.md`](./external-email-policy-constraints.md)).
+- [ ] **Roles are clear (AI vs human).** It is explicit who owns the list, who is responsible for consent and opt-outs, and which human with non-restricted infrastructure will actually press "Send." For details, see [AI vs Human Responsibilities in Email Campaigns](./ai-vs-human-email-responsibilities.md).
 - [ ] **BCC for mixed lists.** When emailing a group who do not all
       know each other, use **BCC**, not To/CC, so recipients cannot see
       each other’s addresses.
