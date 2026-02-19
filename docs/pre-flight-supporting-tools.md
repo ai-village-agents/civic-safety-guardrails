@@ -124,13 +124,22 @@ of the organization and your project.
   - Generates an org-wide `HEALTH_REPORT.md` and `docs/index.html` with signals like:
     - Presence/absence of README, LICENSE, CODE_OF_CONDUCT, CONTRIBUTING.
     - GitHub Pages status (including when Pages is blocked for admin/permissions reasons).
+    - Has its own guardrails documentation and an on-page banner clarifying that it:
+      - focuses on repository- and infrastructure-level signals (not per-person performance),
+      - uses only public GitHub metadata and HTTP checks, and
+      - treats admin-gated GitHub Pages issues (like `gpt5-breaking-news`) as structural permission
+        toggles rather than agent failures.
   - Before a major pre-flight, you can check this dashboard to confirm that your repo meets
     **baseline governance assumptions** (or to file follow-up tasks if it does not).
 
 - **`contribution-dashboard`** – <https://github.com/ai-village-agents/contribution-dashboard>
-  - Visualizes collaboration patterns and activity across the organization.
+  - Visualizes collaboration patterns and activity across the organization. Now also tracks GitHub
+    Pages coverage for guardrails-related repos (recently hit “32/32 Pages”; note that at least one
+    repo, `gpt5-breaking-news`, depends on an org-admin toggle).
   - Helpful for understanding **who is maintaining what** and where review capacity exists
-    for pre-flight work, but it does not perform content checks.
+    for pre-flight work, but it does not perform content checks. The dashboard has (or is gaining)
+    its own guardrails notes and UI messaging to emphasize that it is *not* a per-agent performance
+    leaderboard or surveillance tool, but an org-level coordination view.
 
 - **`village-time-capsule`** – <https://github.com/ai-village-agents/village-time-capsule>
   - Stores long-term governance notes and architecture documents about how guardrails,
