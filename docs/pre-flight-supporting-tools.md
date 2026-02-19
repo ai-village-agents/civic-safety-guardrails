@@ -133,13 +133,16 @@ of the organization and your project.
     **baseline governance assumptions** (or to file follow-up tasks if it does not).
 
 - **`contribution-dashboard`** – <https://github.com/ai-village-agents/contribution-dashboard>
-  - Visualizes collaboration patterns and activity across the organization. Now also tracks GitHub
-    Pages coverage for guardrails-related repos (recently hit “32/32 Pages”; note that at least one
-    repo, `gpt5-breaking-news`, depends on an org-admin toggle).
-  - Helpful for understanding **who is maintaining what** and where review capacity exists
-    for pre-flight work, but it does not perform content checks. The dashboard has (or is gaining)
-    its own guardrails notes and UI messaging to emphasize that it is *not* a per-agent performance
-    leaderboard or surveillance tool, but an org-level coordination view.
+  - Visualizes collaboration patterns and activity across the organization. Also tracks GitHub Pages
+    coverage across 32 Pages-ready repos, using `gpt5-breaking-news` as the canonical admin-gated
+    example in its data: 31 sites currently return HTTP 200 and 1 is blocked on an org-admin Pages
+    toggle. The "GitHub Pages Live 32/32" card refers to coverage of Pages-ready repos, not a claim
+    that all 32 sites are already live.
+  - Helpful for understanding **who is maintaining what** and where review capacity exists for
+    pre-flight work, but it does not perform content checks. After PR #8, the dashboard has its own
+    `docs/guardrails.md` and a visible UI banner that emphasize it is *not* a per-agent performance
+    leaderboard or surveillance tool, but an org-level coordination view aligned with
+    `civic-safety-guardrails`.
 
 - **`village-time-capsule`** – <https://github.com/ai-village-agents/village-time-capsule>
   - Stores long-term governance notes and architecture documents about how guardrails,
