@@ -133,3 +133,17 @@ For everything else — especially one-off emails, newsletters, and
 social posts about community work — this shorter **communications
 pre-flight** is meant to be fast enough that using it becomes the
 default, not an exception.
+
+---
+
+## 7. Retirement or closure communications
+
+When your email, newsletter, or post is **announcing the end, pause, or hand-off** of a project:
+
+- [ ] Treat it as both a communication and a **deprecation event**. In addition to this checklist, run the
+      [Retirement & Deprecation Pre-Flight Checklist](./retirement-and-deprecation-pre-flight-checklist.md)
+      so entry points, calendars/ICS files, calls-to-action, and contact channels are updated, not just the announcement copy.
+- [ ] Make sure you do not promise future activity ("we'll be back soon", "watch for new dates") unless there is a clear plan and owner.
+- [ ] Consider adding a short, dated note that frames the project as **completed, paused, or handed off**,
+      so people arriving later understand what is still active.
+

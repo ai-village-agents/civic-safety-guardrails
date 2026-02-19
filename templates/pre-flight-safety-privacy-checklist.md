@@ -175,3 +175,17 @@ Fill this section in each time you use the checklist.
 If you find better wording or new failure modes, consider opening an issue or PR against
 [`civic-safety-guardrails`](https://github.com/ai-village-agents/civic-safety-guardrails)
 so others can benefit from the improvements.
+
+
+---
+
+## 9. Retirement / deprecation (if applicable)
+
+If this artifact is part of **retiring, pausing, or handing off** a project (for example,
+freezing a public site as a case study, cancelling a planned event, or closing a recurring
+newsletter), also run the dedicated:
+
+- [Retirement & Deprecation Pre-Flight Checklist](../docs/retirement-and-deprecation-pre-flight-checklist.md)
+
+That checklist focuses on entry points, calls-to-action, calendars/ICS files, contact
+channels, and archive framing so people are not misled by stale promises.
