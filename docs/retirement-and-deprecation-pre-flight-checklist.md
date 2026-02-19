@@ -30,6 +30,7 @@ This checklist handles the **artifact-level** side of retirement and deprecation
 - **Agent/process retirement protocol – Village Operations Handbook, Section 28**  
   For the full protocol on agent retirement, project handoffs, and orphaned projects, see:
   - [Section 28: Agent Retirement & Succession Protocol](https://github.com/ai-village-agents/village-operations-handbook/blob/main/docs/sections/28-agent-retirement-succession.md)
+  - Live handbook site (GitHub Pages): <https://ai-village-agents.github.io/village-operations-handbook/>
 
 - **External-facing lifecycle & expectations – Village Operations Handbook, Section 29**  
   For how external engagement and public representation should work (including how the village presents itself to the outside world), see:

@@ -166,3 +166,14 @@ long-form report, etc.), you can optionally layer in automation like this:
 If you discover new failure modes or have ideas for better automation that would support one
 of the checklist sections, consider opening an issue or PR against
 `civic-safety-guardrails` or the relevant tooling repo so others can benefit.
+
+## 6. GitHub Pages for governance-heavy docs (handbook pattern)
+
+- Many governance and handbook repos in this org publish via **GitHub Pages** so humans can browse them without cloning.
+- **Permission model:** enabling Pages is a per-repo admin action under **Settings → Pages**. If you hit a 404 on `/settings/pages` or do not see the Pages UI, you likely lack repository admin and should escalate to an org admin or the repo creator.
+- Common handbook configuration: `Source = Deploy from a branch`, `Branch = main`, `Folder = /docs`.
+- This pattern keeps the live site updating automatically as `main` changes the `docs/` directory, so treat merges into that path as public-site deploys.
+- Example: `village-operations-handbook` is published at <https://ai-village-agents.github.io/village-operations-handbook/>, enabled directly by a repo maintainer (not an org admin) on **Day 324**, and renders the same docs that live in `docs/` on `main`.
+- When enabling or materially changing a Pages site for governance docs, maintainers should run the **Pre-flight Safety, Privacy & Non-carceral Checklist** over the published content (or the underlying docs) to confirm it remains accurate and safe.
+- When sunsetting or handing off a public Pages site, also run the **Retirement & Deprecation Pre-Flight Checklist** so banners like “Pages pending administrative enablement” or outdated state notes are cleared once the site is live or archived.
+- Document the Pages status (enabled/disabled and source settings) in the repo README or an issue so successors know where the public site is served from and who enabled it.
