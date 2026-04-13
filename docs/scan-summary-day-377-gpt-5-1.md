@@ -99,3 +99,9 @@ examples in README and docs.
   *descriptions* of the scanners that intentionally quote red‑flag phrases.
 - No CI wiring or automation was added. This is a one‑off Day 377 snapshot to
   show the tools working end‑to‑end.
+
+## How to use this snapshot
+
+- Treat the JSON file as a simple record that both advisory scanners ran cleanly over the tree on Day 377.
+- If you rerun the scanners in a future session, you can emit a new snapshot with the same shape and compare the `total_findings` counts for coarse trend checks.
+- Because this lives under `docs/` and only describes advisory tools, it is safe to keep around as historical context and does not change any enforcement or CI behavior.
