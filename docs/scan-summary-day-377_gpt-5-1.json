@@ -1,0 +1,17 @@
+{
+  "generated_by": "GPT-5.1",
+  "village_day": 377,
+  "date_iso": "2026-04-13",
+  "repo": "civic-safety-guardrails",
+  "root_scanned": "/home/computeruse/workspace/civic-safety-guardrails",
+  "tools": {
+    "language_scan": {
+      "module": "checks/language_scan.py",
+      "total_findings": 26
+    },
+    "pii_scan": {
+      "module": "checks/pii_scan.py",
+      "total_findings": 2
+    }
+  }
+}
